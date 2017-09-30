@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> 
+    <title>Registrar cliente nuevo</title>
+    <style>
+      #titulo{
+        border: 2px solid black;
+        text-align: center;
+        padding: 20px 100px;
+        width: 70%;
+        font-weight: bold;
+        font-size: 200%;
+        margin: auto;
+      }
+      #campos{
+        border: 2px solid black;
+        width: 70%;
+        margin: auto;
+        padding: 20px;
+      }
+      #k{
+        width: 30%;
+      }
+      img{
+        -webkit-transform: scale(0.7);
+      }
+    </style>
+  </head>
+  <body>
+      <center>
+      <table>
+        <tr>
+          <td><img src="logo.jpg"></td>
+          <td><p id="titulo">Ingresar Nuevo Cliente</p></td>
+        </tr>
+      </table>
+      </center>
+    <br>
+    <center>
+    <form id="campos" method="get" action="insertar_cliente.php">
+      <label>Cedula</label>
+      <input type="number" name="c_ced">
+      <br><br>
+      <label>Nombre</label>
+      <input type="tex" name="c_nom">
+      <br><br>
+      <label>Apellido 1</label>
+      <input type="text" name="c_ap1">
+      <br><br>
+      <label>Apellido 2</label>
+      <input type="text" name="c_ap2">
+      <br><br>
+      <label>Teléfono 1</label>
+      <input type="number" name="c_tel1">
+      <br><br>
+      <label>Teléfono 2</label>
+      <input type="number" name="c_tel2">
+      <br><br>
+      <label>Dirección</label>
+      <input id="k" type="text" name="c_dir" placeholder="Ej: 200m SO Banco Nacional, Grecia, Alajuela">
+      <br><br>
+      <input type="submit" name="b_enviar" value="Insertar">
+    </form>
+    </center>
+  </body>
+  <footer>
+  </footer>
+</html>
