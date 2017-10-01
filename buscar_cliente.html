@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> 
+    <title>Registrar cliente nuevo</title>
+    <style>
+      #titulo{
+        border: 2px solid black;
+        text-align: center;
+        padding: 20px 100px;
+        width: 70%;
+        font-weight: bold;
+        font-size: 200%;
+        margin: auto;
+      }
+      #campos{
+        border: 2px solid black;
+        width: 70%;
+        margin: auto;
+        padding: 20px;
+      }
+      #k{
+        width: 30%;
+      }
+      img{
+        -webkit-transform: scale(0.7);
+      }
+    </style>
+  </head>
+  <body>
+      <center>
+      <table>
+        <tr>
+          <td><img src="logo.jpg"></td>
+          <td><p id="titulo">Buscar Cliente</p></td>
+        </tr>
+      </table>
+      </center>
+    <br>
+    <center>
+    <form id="campos" method="get" action="buscar_cliente.php">
+      <label>Nombre</label>
+      <input type="text" name="c_nom">
+    </form>
+    </center>
+  </body>
+  <footer>
+  </footer>
+</html>
