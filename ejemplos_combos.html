@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> 
+    <title>Cambiando colores con JS</title>
+    <style>
+        p{
+          border: 1px solid black;
+          text-align: center;
+          padding: 10px 0px;
+          width: 30%;
+        }
+    </style>
+    <script>
+        function main(){
+            var parrs = document.getElementsByTagName("p");
+            for(var i=0 ; i< parrs.length ; i++){
+                //parrs[i].addEventListener("onclick", colorear, false);
+                parrs[i].onclick = colorear;
+            }
+            //alert("fin main");
+        }
+        
+        
+        function colorear(){
+            var parrs = document.getElementsByTagName("p");
+            for(var i=0 ; i< parrs.length ; i++){
+                parrs[i].style = "background-color:red;";
+                //alert((i+1)+"colorados\n");
+            }
+            //alert("fin colorear");
+        }
+        window.onload = main;
+        //alert("caa");
+    </script>
+  </head>
+  <body>
+    <center><p>Lo que por agua viene por agua se va <br><b>[click_here]</b> </p></center>
+    <center><p>Mas sabe el diablo por viejo que por diablo <br><b>[click_here]</b></p></center>
+    <center>
+      <select>
+        <option value="Repuesto">Repuesto</option>
+        <option value="Producto">Producto</option>
+        <option value="Cliente">Cliente</option>
+      </select>
+    </center>
+      
+    <br><br>
+    
+    <center>
+      <input list="repuestos" name="repuestos">
+      <datalist id="repuestos">
+        <option value="Espejo Trasero">
+        <option value="Puerta Izquierda">
+        <option value="Aros 14' Gris">
+        <option value="Parabrisas delantero">
+        <option value="Asientos traseros">
+      </datalist> 
+    </center>
+  </body>
+  <footer>
+  </footer>
+</html>
