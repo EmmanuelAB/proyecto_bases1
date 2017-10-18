@@ -13,14 +13,21 @@
     </style>
     <script>
         function main(){
-            var parrs = document.getElementsByTagName("p");
-            for(var i=0 ; i< parrs.length ; i++){
+            combo = document.getElementById("combo");
+            combo.addEventListener("click", avisar);
+        
+        
+        
+            //var parrs = document.getElementsByTagName("p");
+            //for(var i=0 ; i< parrs.length ; i++){
                 //parrs[i].addEventListener("onclick", colorear, false);
-                parrs[i].onclick = colorear;
-            }
+                //parrs[i].onclick = colorear;
+            //}
             //alert("fin main");
         }
-        
+        function avisar(){
+            alert("Ha seleccionado ["+combo.value+"]"); 
+        }
         
         function colorear(){
             var parrs = document.getElementsByTagName("p");
@@ -38,7 +45,7 @@
     <center><p>Lo que por agua viene por agua se va <br><b>[click_here]</b> </p></center>
     <center><p>Mas sabe el diablo por viejo que por diablo <br><b>[click_here]</b></p></center>
     <center>
-      <select>
+      <select id="combo">
         <option value="Repuesto">Repuesto</option>
         <option value="Producto">Producto</option>
         <option value="Cliente">Cliente</option>
