@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> 
+    <title>DOC</title>
+    <style>
+        td{
+            text-align:center;
+            padding: 5px;
+        }
+        table{
+            margin: 20px;
+        }
+        #cab{
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            text-shadow: black 2px 2px 2px;
+        }
+        tr:nth-child(even){
+            background-color: #dee0e2;
+        }
+
+    </style>
+  </head>
+  <body>
+    <iframe src="header_comun.html" style="border: 5px solid gray; width: 99%; height: 115px;"></iframe>
+    <center>
+        <p style="font-size: 200%; font-weight: bold;">Buscar repuesto</p>
+    </center>
+    <center>
+    <select id="combo_marcas" onchange="pedir_modelos()">
+<!--
+      <option value="-Marcas-">-Marcas-</option>  
+-->
+      <option value="Toyota">Toyota</option>                                  
+    </select>
+    <select id="combo_modelos" onchange="pedir_años()">
+<!--
+      <option value="-Modelos-">-Modelos-</option>
+-->
+      <option value="Corolla">Corolla</option>
+    </select>
+    <select id="combo_años" onchange="pedir_repuestos()">
+<!--
+      <option value="-Años-">-Años-</option>
+-->
+      <option value="1989">1989</option> 
+      <option value="1992">1992</option>                
+    </select>
+    <input id="campo_repuestos" list="repuestos" style="display:none" placeholder="nombre del repuesto">
+    <datalist id="repuestos">
+    </datalist>
+    <button onclick="listar_repuestos()" style="dislpay:none;">Buscar</button>
+    <center>
+    <table border="1" id="tabla_repuestos">
+        
+    </table>
+    </center>
+    </center>
+    <script type="text/javascript" language="javascript">
+        var http_request = false;
+        var combo_marcas = document.getElementById("combo_marcas");
+        var combo_modelos = document.getElementById("combo_modelos");
+        var combo_años = document.getElementById("combo_años");
+        var lista_repuestos = document.getElementById("repuestos");      
+        var tabla_repuestos = document.getElementById("tabla_repuestos");   
+        var combo_cambiando;
+        
+        function listar_repuestos(){
+            //alert("holamundo");
+            combo_cambiando = tabla_repuestos;
+            var marca = combo_marcas[combo_marcas.selectedIndex].value;
+            var modelo = combo_modelos[combo_modelos.selectedIndex].value;
+            var año = combo_años[combo_años.selectedIndex].value;
+            var repuesto = campo_repuestos.value;
+            //alert("fuck yea"+marca+modelo+año);
+            makeRequest('listar_repuestos.php?marca='+marca+'&'+'modelo='+modelo+'&'+'año='+año+'&'+'repuesto='+repuesto);
+        }
+        
+        function makeRequest(url, combo) {
+            http_request = false;
+            if (window.XMLHttpRequest) { // Mozilla, Safari,...
+                http_request = new XMLHttpRequest();
+            }
+            if (!http_request) {
+                alert('Falla :( No es posible crear una instancia XMLHTTP');
+                return false;
+            }
+            //http_request.onreadystatechange = "requestDone";
+            http_request.onreadystatechange = requestDone;            
+            http_request.open('GET', url, true);
+            http_request.send(null);
+        }
+        function requestDone() {
+            if (http_request.readyState == 4) {
+                if (http_request.status == 200) {
+                    combo_cambiando.innerHTML = http_request.responseText;                 
+                    //alert("hecho");
+                } else {
+                    alert('Hubo problemas con la petición.');
+                }
+            }
+        }
+        function marca_cambiada(){
+            alert("marca cambiada");
+            pedir_modelos();
+        }
+        function pedir_marcas(){
+                //Testing
+                //combo_marcas.value="Toyota";
+                //combo_modelos.value="Corolla";
+                //combo_modelos[0].value="Corolla";
+                //combo_años.value="1989";
+                pedir_repuestos();
+            //combo_cambiando = combo_marcas;
+            //makeRequest('pedir_marcas.php');
+        }
+        function pedir_modelos(){
+            combo_cambiando = combo_modelos;
+            var marca = combo_marcas[combo_marcas.selectedIndex].value;
+            makeRequest('pedir_modelos.php?marca='+marca);
+        }
+        function pedir_años(){
+            combo_cambiando = combo_años;
+            var marca = combo_marcas[combo_marcas.selectedIndex].value;
+            var modelo = combo_modelos[combo_modelos.selectedIndex].value;
+            makeRequest('pedir_años.php?marca='+marca+'&'+'modelo='+modelo);
+        }
+        function pedir_repuestos(){
+            //alert("pidiendo repuestos")
+            combo_cambiando = lista_repuestos;
+            var marca = combo_marcas[combo_marcas.selectedIndex].value;
+            var modelo = combo_modelos[combo_modelos.selectedIndex].value;
+            var año = combo_años[combo_años.selectedIndex].value;
+            //alert("fuck yea"+marca+modelo+año);
+            makeRequest('pedir_repuestos.php?marca='+marca+'&'+'modelo='+modelo+'&'+'año='+año);
+            //alert("paso el puente");
+            document.getElementById("campo_repuestos").style.display = "inline-block";
+            //alert("fuck yea");
+        }
+        window.onload = pedir_marcas;  
+    </script>
+  </body>
+  <footer>
+  </footer>
+</html>
+
+
+
