@@ -1,10 +1,6 @@
 <?php 
-    $con = pg_connect("host=localhost 
-                       dbname=repuestera
-                       user=postgres
-                       password=pepo123")
-                       or die('No se ha podido conectar'
-                       . pg_last_error() );
+    require("../base/credenciales.php");
+    $con = pg_connect($datos_conexion) or die ('No se ha podido conectar'. pg_last_error() );
 
     $cedula = $_GET["c_ced"];
     $nombre = $_GET["c_nom"];

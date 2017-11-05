@@ -1,5 +1,6 @@
 <?php
-    $con = pg_connect("host=localhost dbname=repuestera user=postgres password=pepo123") or die ('No se ha podido conectar'. pg_last_error() );
+    require("../base/credenciales.php");
+    $con = pg_connect($datos_conexion) or die ('No se ha podido conectar'. pg_last_error() );
     $res = pg_query("select distinct marca from tipocarro;");
             echo "<select style='margin: 20px 10px;'>";
             echo "<option>-Marcas-</option>";
@@ -11,5 +12,6 @@
                 }
             }
             echo "</select>";
+            
     pg_close($con);
 ?>

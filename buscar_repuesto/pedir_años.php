@@ -1,5 +1,6 @@
 <?php
-    $con = pg_connect("host=localhost dbname=repuestera user=postgres password=pepo123") or die ('No se ha podido conectar'. pg_last_error() );
+    require("../base/credenciales.php");
+    $con = pg_connect($datos_conexion) or die ('No se ha podido conectar'. pg_last_error() );
     $marca = $_GET["marca"];
     $modelo = $_GET["modelo"];
     $res = pg_query("select distinct año from tipocarro t where t.marca = '$marca' and t.modelo='$modelo';");
