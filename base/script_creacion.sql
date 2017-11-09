@@ -19,7 +19,7 @@ CREATE TABLE tipocarro (
 CREATE TABLE producto (
     codigo int PRIMARY KEY,
     nombre varchar(60) NOT NULL,
-    tipo varchar(10)
+    tipo varchar(10)  --dice si es quimico o repuesto
 );
 
 CREATE TABLE aplicapara (
@@ -43,11 +43,11 @@ CREATE TABLE carro (
 CREATE TABLE entradaexp (
     identradaexp int PRIMARY KEY,
     fecha varchar(10),
-    descripcion varchar(50),
+    descripcion varchar(50), --solo si hace trabajo -> pone descrip 
     cantidad int,
     total int,
-    cedula int,
-    codigoproducto int,
+    cedula int, 
+    codigoproducto int,      --si vende producto pone el codigo
 
     CONSTRAINT entradaexp_cedula_fkey FOREIGN KEY (cedula) REFERENCES cliente(cedula),
     CONSTRAINT entradaexp_codigoproducto_fkey FOREIGN KEY (codigoproducto) REFERENCES producto(codigo)

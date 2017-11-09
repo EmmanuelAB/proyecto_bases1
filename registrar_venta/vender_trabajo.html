@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> 
+    <title>DOC</title>
+    <style>
+        td{
+            text-align:center;
+            padding: 5px;
+        }
+        table{
+            margin: 20px;
+        }
+        #cab{
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            text-shadow: black 2px 2px 2px;
+        }
+        tr:nth-child(even){
+            background-color: #dee0e2;
+        }
+
+    </style>
+  </head>
+  <body>
+    <iframe src="../header_comun/header_comun.html" style="border: 5px solid gray; width: 99%; height: 115px;"></iframe>
+    <center>
+        <p style="font-size: 200%; font-weight: bold;">Registrar Trabajo</p>
+    </center>
+    <center>
+    <form action="registrar_trabajo.php" method="get">
+        <label>Fecha</label>
+        <input type="date">
+        <br><br>
+        <label>Cliente</label>
+        <input list="clientes" type="text">
+        <br><br>
+        <label>Decripción</label>
+        <input type="text" placeholder="Ej: Cambio aceite">
+        <br><br>
+        <label>Precio</label>
+        <input type="number">
+        <br><br>
+        <input type="submit" value="Registrar">
+    </form>
+    </center>
+    <datalist id="clientes">
+    </datalist>
+    <script>
+        var combo_cambiando = document.getElementById("clientes");
+        function llenar_clientes(){
+            makeRequest("pedir_clientes.php");
+        }
+        function makeRequest(url, combo) {
+            http_request = false;
+            if (window.XMLHttpRequest) { // Mozilla, Safari,...
+                http_request = new XMLHttpRequest();
+            }
+            if (!http_request) {
+                alert('Falla :( No es posible crear una instancia XMLHTTP');
+                return false;
+            }
+            //http_request.onreadystatechange = "requestDone";
+            http_request.onreadystatechange = requestDone;            
+            http_request.open('GET', url, true);
+            http_request.send(null);
+        }
+        function requestDone() {
+            if (http_request.readyState == 4) {
+                if (http_request.status == 200) {
+                    combo_cambiando.innerHTML = http_request.responseText;                 
+                    //alert("hecho");
+                } else {
+                    alert('Hubo problemas con la petición.');
+                }
+            }
+        }
+        window.onload = llenar_clientes; 
+    </script>
+  </body>
+  <footer>
+  </footer>
+</html>
