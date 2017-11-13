@@ -15,8 +15,7 @@
     $query = "insert into cliente (cedula, nombre, apellido1, apellido2, telefono1, telefono2, direccion)
               values ($cedula,'$nombre','$apellido1','$apellido2',$telefono1,$telefono2, '$direccion')
               ";
-    $result = pg_query($query) or die('La consulta falló'.
-              pg_last_error());
+    $result = pg_query($query) or die('La consulta falló'.pg_last_error());
            
     echo "<p style='color: white;background-color:green; text-align:center; padding:15px;'>INSERCIÓN EXITOSA</p> <br>";
     $result =  pg_query("select * from cliente");
@@ -30,6 +29,5 @@
         echo "\t</tr>\n";
     }
     echo "</table></center>\n";
-    pg_free_result($result);
     pg_close($con);
 ?>

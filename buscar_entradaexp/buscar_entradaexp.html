@@ -3,36 +3,18 @@
   <head>
     <meta charset="utf-8"> 
     <title>DOC</title>
-    <style>
-        label{
-            padding-right: 15px;
-        }
-        td{
-            text-align:center;
-            padding: 5px;
-        }
-        table{
-            margin: 20px;
-        }
-        #cab{
-            background-color: red;
-            color: white;
-            font-weight: bold;
-            text-shadow: black 2px 2px 2px;
-        }
-        tr:nth-child(even){
-            background-color: #dee0e2;
-        }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="../css/titulo_pagina.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo_formularios.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo_tablas.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo_header_comun.css">
   </head>
   <body>
-    <iframe src="../header_comun/header_comun.html" style="border: 5px solid gray; width: 99%; height: 115px;"></iframe>
+    <iframe src="../header_comun/header_comun.html"></iframe>
     <center>
-        <p style="font-size: 200%; font-weight: bold;">Buscar entradas por cliente</p>
+        <p id="titulo_pagina">Buscar entradas por cliente</p>
     </center>
     <datalist id="clientes">
-        aqui van los clientes
+        <!--aqui van los clientes-->
     </datalist>
     <center>
         <label>Cliente</label><input list="clientes" id="cedula" placeholder="cedula">
@@ -47,7 +29,7 @@
         function main(){
             cambiarInnerHTML("clientes","pedir_clientes.php");
             //debug
-            cambiarInnerHTML("tabla_clientes","pedir_entradas.php?c_cedula="+1234563);
+            //cambiarInnerHTML("tabla_clientes","pedir_entradas.php?c_cedula="+1234563);
         }
         
         function listar_entradas(){

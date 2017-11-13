@@ -16,10 +16,11 @@
                      and
                      p.nombre like '%$repuesto%'
                      ");
-    echo "<tr id='cab'>";
-    echo "<td>Repuesto</td>";
-    echo "<td>Precio</td>";
-    echo "<td>Cantidad</td>";
+    $campos = array("Repuesto","Precio","Cantidad");
+    echo "<tr id='fila_titulo'>";
+    foreach($campos as $campo){
+        echo "<td>$campo</td>";
+    }
     echo "</tr>";
     while($registro = pg_fetch_array($res, null, PGSQL_ASSOC)){
         echo "<tr>";
@@ -28,7 +29,6 @@
         }
         echo "</tr>";
     }
-            //echo "</select>";
     pg_close($con);
 ?>
 

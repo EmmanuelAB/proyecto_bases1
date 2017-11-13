@@ -1,0 +1,19 @@
+td{
+    text-align:center;
+    padding: 5px;
+}
+
+table{
+    margin: 20px;
+}
+
+#fila_titulo{
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    text-shadow: black 2px 2px 2px;
+}
+
+tr:nth-child(even){
+    background-color: #dee0e2;
+}

@@ -3,46 +3,31 @@
   <head>
     <meta charset="utf-8"> 
     <title>Registrar cliente nuevo</title>
-    <style>
-      #titulo{
-        border: 2px solid black;
-        text-align: center;
-        padding: 20px 100px;
-        width: 70%;
-        font-weight: bold;
-        font-size: 200%;
-        margin: auto;
-      }
-      #campos{
-        border: 2px solid black;
-        width: 70%;
-        margin: auto;
-        padding: 20px;
-      }
-      #k{
-        width: 30%;
-      }
-      img{
-        -webkit-transform: scale(0.7);
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../css/titulo_pagina.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo_formularios.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo_tablas.css">
+    <link rel="stylesheet" type="text/css" href="../css/estilo_header_comun.css">
   </head>
   <body>
-      <center>
-      <table>
-        <tr>
-          <td><img src="../img/logo.jpg"></td>
-          <td><p id="titulo">Buscar Cliente</p></td>
-        </tr>
-      </table>
-      </center>
-    <br>
+    <iframe src="../header_comun/header_comun.html"></iframe>
     <center>
-    <form id="campos" method="get" action="buscar_cliente.php">
-      <label>Nombre</label>
-      <input type="text" name="c_nom">
-    </form>
+        <p id="titulo_pagina">Buscar cliente</p>
     </center>
+    <center>
+      <label>Nombre</label>
+      <input type="text" name="c_nom" id="c_nom">
+      <button onclick="buscar()">Buscar</button>
+    <table id="tabla">
+        <!--Aqui van los resultados-->
+    </table>
+    </center>
+    <script src="../js/html_changer.js"></script>
+    <script>
+        function buscar(){
+            var nombre = document.getElementById("c_nom").value;
+            cambiarInnerHTML("tabla", "buscar_cliente.php?c_nom="+nombre);
+        }
+    </script>
   </body>
   <footer>
   </footer>
