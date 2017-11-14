@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Borrar cliente</title>
+    <link rel="stylesheet" type="text/css" href="../Estilos/estilo_header_comun.css">
+    <link rel="stylesheet" type="text/css" href="../Estilos/titulo_pagina.css">
+    <link rel="stylesheet" type="text/css" href="../Estilos/estilo_formularios.css">
+</head>
+<body>
+    <iframe src="../Plantillas/header_comun/header_comun.html"></iframe>
+    <center><p id="titulo_pagina">Borrado Clientes</p></center>
+    <form name="formIns" action="Eliminar_cliente.php" method="get">
+        <table align="center">
+            <tr>
+                <td>Cedula Cliente</td>
+                <td><input type="text" name="c_ced"></td>
+            </tr>
+            <tr>
+                <td><br></td>
+                <td><input type="submit" name="delete" value="Eliminar"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

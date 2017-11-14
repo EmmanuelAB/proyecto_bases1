@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insertar Tipo de Carro Nuevo</title>
+    <link rel="stylesheet" type="text/css" href="../Estilos/estilo_header_comun.css">
+    <link rel="stylesheet" type="text/css" href="../Estilos/titulo_pagina.css">
+    <link rel="stylesheet" type="text/css" href="../Estilos/estilo_formularios.css">
+</head>
+<body>
+    <iframe src="../Plantillas/header_comun/header_comun.html"></iframe>
+    <center><p id="titulo_pagina">Registro Tipos de Carro</p></center>
+    <form name="formIns" action="Insertar_tipdecarro.php" method="get">
+        <table align="center">
+            <tr>
+                <td>ID Tipo de Carro</td>
+                <td><input type="text" name="t_id"></td>
+            </tr>
+            <tr>
+                <td>Marca</td>
+                <td><input type="text" name="t_marca"></td>
+            </tr>
+            <tr>
+                <td>Modelo</td>
+                <td><input type="text" name="t_modelo"></td>
+            </tr>
+            <tr>
+                <td>Año</td>
+                <td><input type="text" name="t_anio"></td>
+            </tr>
+            <tr>
+                <td><br></td>
+            </tr>
+            <tr>
+                <td><br></td>
+                <td align="center"><input type="submit" name="insertar" value="Registrar"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+
+#header{
+    margin: auto;
+    width: 500px;
+    font-family: "Century Schoolbook L";
+}
+
+ul, ol{
+    list-style: none;
+}
+
+.nav li a{
+    background-color: black;
+    color:white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+}
+
+.nav li a:hover{
+    background-color: #434343;
+}
+
+.nav > li{
+    float: left;
+}

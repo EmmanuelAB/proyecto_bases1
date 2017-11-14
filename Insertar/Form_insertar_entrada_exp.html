@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agregar compra</title>
+    <link rel="stylesheet" type="text/css" href="../Estilos/estilo_header_comun.css">
+    <link rel="stylesheet" type="text/css" href="../Estilos/titulo_pagina.css">
+    <link rel="stylesheet" type="text/css" href="../Estilos/estilo_formularios.css">
+</head>
+<body>
+    <iframe src="../Plantillas/header_comun/header_comun.html"></iframe>
+    <center><p id="titulo_pagina">Registro de compra</p></center>
+    <form name="formIns" action="Insertar_carro.php" method="get">
+        <table align="center">
+            <tr>
+                <td>id_entradaexp </td>
+                <td><input type="number" name="ex_ide"></td>
+            </tr>
+            <tr>
+                <td>cedula de cliente </td>
+                <td><input type="number" name="ex_ced"></td>
+            </tr>
+            <tr>
+                <td>fecha de compra </td>
+                <td><input type="number" name="ex_fec"></td>
+            </tr>
+			<tr>
+                <td>codigo del producto </td>
+                <td><input type="number" name="ex_cod"></td>
+            </tr>
+			<tr>
+                <td>cantidad del producto </td>
+                <td><input type="number" name="ex_can"></td>
+            </tr>
+
+            <tr>
+                <td>precio total </td>
+                <td><input type="number" name="ex_pre"></td>
+            </tr>
+			<tr>
+                <td>descripcion del trabajo </td> <br><br>
+                <td><input id="descripcion" type="text" name="ex_des" width="40"></td>
+            </tr>            
+            <tr>
+                <td><br></td>
+            </tr>
+            <tr>
+                <td><br></td>
+                <td align="center"><input type="submit" name="insertar" value="Registrar"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

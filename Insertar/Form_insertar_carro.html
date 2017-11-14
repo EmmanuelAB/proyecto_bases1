@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insertar Cliente Nuevo</title>
+    <link rel="stylesheet" type="text/css" href="../Estilos/estilo_header_comun.css">
+    <link rel="stylesheet" type="text/css" href="../Estilos/titulo_pagina.css">
+    <link rel="stylesheet" type="text/css" href="../Estilos/estilo_formularios.css">
+</head>
+<body>
+    <iframe src="../Plantillas/header_comun/header_comun.html"></iframe>
+    <center><p id="titulo_pagina">Registro Vehículos</p></center>
+    <form name="formIns" action="Insertar_carro.php" method="get">
+        <table align="center">
+            <tr>
+                <td>Placa</td>
+                <td><input type="text" name="ca_plac"></td>
+            </tr>
+            <tr>
+                <td>Tipo Carro</td>
+                <td><input type="text" name="ca_tipo"></td>
+            </tr>
+            <tr>
+                <td>Cedula Cliente</td>
+                <td><input type="text" name="ca_cedcl"></td>
+            </tr>
+            <tr>
+                <td><br></td>
+            </tr>
+            <tr>
+                <td><br></td>
+                <td align="center"><input type="submit" name="insertar" value="Registrar"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

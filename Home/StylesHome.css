@@ -1,0 +1,106 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+body{
+    background-color: black;
+}
+
+.Fondo{
+    margin-top: 5px;
+    margin-left: 9%;
+    float: left;
+}
+
+header{
+    width: 100%;
+    background-color: #de0000;
+    position: relative;
+    height:108px;
+}
+header .logo{
+    float: left;
+    padding: 5px 0px;
+}
+
+.wrapper{
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/**Propiedades de elementtos principales del menu**/
+header nav > ul > li > a{
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    position: relative;
+}
+
+/**Propiedades de elementos secundarios del menu**/
+header nav > ul > li > ul a{
+    color:black;
+    border-radius: 15px;
+    background-color: white;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    padding: 10px 30px;
+    position: relative;
+}
+
+/*Acomodando el menu*/
+header nav{
+    margin-top: 35px;
+}
+
+/*Acomodarlo al final del header*/
+header nav ul{
+    float: right;
+    list-style: none;
+}
+
+/*Acomodarlo en una sola fila*/
+header nav > ul > li{
+    float: left;
+}
+
+/*Animacin de corrimiento*/
+header nav ul ul{
+    transform: translateX(80%);
+    transition: all .5s;
+    opacity: 0;
+}
+
+/*Cuando pase sobre una ocion desplegar el submenu con la animaciosn*/
+header nav > ul > li:hover > ul{
+    display: block;
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+/*Cambiar algunas propiedades para que parezcan botones*/
+header nav > ul > li > a:hover{
+    border-radius: 15px;
+    background-color: #ec2a30;
+}
+
+header nav > ul > li > ul a:hover{
+    color: white;
+    background-color: #ec2a30;
+}
+
+.wrapper2{
+    width: 95%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+

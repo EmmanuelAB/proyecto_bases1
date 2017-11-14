@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> 
+    <title>DOC</title>
+    <link rel="stylesheet" type="text/css" href="../../Estilos/titulo_pagina.css">
+    <link rel="stylesheet" type="text/css" href="../../Estilos/estilo_formularios.css">
+    <link rel="stylesheet" type="text/css" href="../../Estilos/estilo_tablas.css">
+    <link rel="stylesheet" type="text/css" href="../../Estilos/estilo_header_comun.css">
+  </head>
+  <body>
+    <iframe src="../../Plantillas/header_comun/header_comun.html"></iframe>
+    <center>
+        <p id="titulo_pagina">Buscar ventas por cliente</p>
+    </center>
+    <datalist id="clientes">
+        <!--aqui van los clientes-->
+    </datalist>
+    <center>
+        <label>Cliente</label><input list="clientes" id="cedula" placeholder="cedula">
+        <button onclick="listar_entradas()">Buscar</button>
+    </center>
+    <center>
+    <table id="tabla_clientes">
+    </table>
+    </center>
+    <script src="../../JS/html_changer.js"></script>
+    <script>
+        function main(){
+            cambiarInnerHTML("clientes","pedir_clientes.php");
+            //debug
+            //cambiarInnerHTML("tabla_clientes","pedir_entradas.php?c_cedula="+1234563);
+        }
+        
+        function listar_entradas(){
+            var cedula = document.getElementById("cedula").value;
+            cambiarInnerHTML("tabla_clientes","pedir_entradas.php?c_cedula="+cedula);
+        }
+        window.onload = main;  
+    </script>
+  </body>
+  <footer>
+  </footer>
+</html>
+
+
+
