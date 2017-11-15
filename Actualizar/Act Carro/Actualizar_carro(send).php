@@ -19,16 +19,20 @@
                 $connection = pg_connect($string_connection) or die("No se pudo conectar".pg_last_error());
 
                 //Consulta a ejecutar sobre la base
-                $query = 'Select * from'.'"Carro"'.'where "Placa"'."=$placa";
+                $query = "Select * from carro where placa='$placa'";
                 $resultado = pg_query($connection,$query);
 
 
                 if(pg_num_rows($resultado) >= 1){
-                    echo "<h1>Vehiculo encontrado!</h1>";
+                    echo "<link rel='stylesheet' type='text/css' href='../../Estilos/estilo_header_comun.css'>";
+                    echo '<link rel="stylesheet" type="text/css" href="../../Estilos/titulo_pagina.css">';
+                    echo '<link rel="stylesheet" type="text/css" href="../../Estilos/estilo_formularios.css">';                
+                    echo "<iframe src='../../Plantillas/header_comun/header_comun.html'></iframe>";
+                    echo "<center><p id='titulo_pagina'>Vehiculo encontrado!</p></center>";
                     $registro = pg_fetch_array($resultado, null, PGSQL_ASSOC);
                     echo "<form action='Actualizar_carro(receive).php'>";
                     echo "<table align='center'>";
-                    $atributos = array("Placa","TipoCarro","CedulaCliente");
+                    $atributos = array("placa","idtipocarro","cedula");
                     foreach($atributos as $atributo){
                         echo "<tr>";
                         echo "<td>";

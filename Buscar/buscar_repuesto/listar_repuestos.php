@@ -5,7 +5,7 @@
     $connection = pg_connect($string_connection) or die("No se pudo conectar".pg_last_error());
     $marca = $_GET["marca"];
     $modelo = $_GET["modelo"];
-    $ano = $_GET["ano"];
+    $ano = $_GET["año"];
     $repuesto = $_GET["repuesto"];
     $res = pg_query("select distinct p.nombre, a.precio, a.cantidad
                      from tipocarro t join aplicapara a on t.idtipocarro = a.idtipocarro

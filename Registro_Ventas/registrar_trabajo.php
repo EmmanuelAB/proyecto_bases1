@@ -7,10 +7,13 @@
 
     $string_connection = "host=".$db_direction." dbname=".$db_name. " user=".$db_username. " password=".$db_password;
     $connection = pg_connect($string_connection) or die("No se pudo conectar".pg_last_error());;
-    $res = pg_query("insert into entradaexp(identradaexp, fecha , descripcion, cantidad, total, cedula)".
-                    "values (41,'$fecha','$descrip',1,$precio,$cedula);");
+    $res = pg_query("insert into entradaexp(fecha , descripcion, cantidad, total, cedula)".
+                    "values ('$fecha','$descrip',1,$precio,$cedula);");
     if($res){
-        echo "Registro exitoso";
+        echo "<link rel='stylesheet' type='text/css' href='../Estilos/estilo_header_comun.css'>";
+        echo '<link rel="stylesheet" type="text/css" href="../Estilos/titulo_pagina.css">';
+        echo "<iframe src='../Plantillas/header_comun/header_comun.html'></iframe>";
+        echo "<center><p id='titulo_pagina'>Registro exitoso!</p></center>";
     }
-    pg_close($con);
+    pg_close($connection);
 ?>

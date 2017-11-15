@@ -11,7 +11,7 @@
             error_reporting(E_ALL);
             ini_set('display_errors', 1);
 
-            require("/var/www/html/ConectDB/Proyecto Taller/CredencialesProyecto.php");
+            require("../../Base/CredencialesProyecto.php");
 
             $cedula = $_GET["c_ced"];
 
@@ -19,16 +19,20 @@
             $connection = pg_connect($string_connection) or die("No se pudo conectar".pg_last_error());
 
             //Consulta a ejecutar sobre la base
-            $query = 'Select * from'.'"Cliente"'.'where "Cedula"'."=$cedula";
+            $query = 'Select * from '.' cliente '.' where cedula'."=$cedula";
             $resultado = pg_query($connection,$query);
             
 
             if(pg_num_rows($resultado) >= 1){
-                echo "<h1>Cliente encontrado!</h1>";
+                echo "<link rel='stylesheet' type='text/css' href='../../Estilos/estilo_header_comun.css'>";
+                echo '<link rel="stylesheet" type="text/css" href="../../Estilos/titulo_pagina.css">';
+                echo '<link rel="stylesheet" type="text/css" href="../../Estilos/estilo_formularios.css">';                
+                echo "<iframe src='../../Plantillas/header_comun/header_comun.html'></iframe>";
+                echo "<center><p id='titulo_pagina'>Recuperación exitosa!</p></center>";
                 $registro = pg_fetch_array($resultado, null, PGSQL_ASSOC);
                 echo "<form action='Actualizar_cliente(receive).php'>";
                 echo "<table align='center'>";
-                $atributos = array("Cedula","Nombre","Apellido1","Apellido2","Telefono1","Telefono2","Direccion");
+                $atributos = array("cedula","nombre","apellido1","apellido2","telefono1","telefono2","direccion");
                 foreach($atributos as $atributo){
                     echo "<tr>";
                     echo "<td>";
