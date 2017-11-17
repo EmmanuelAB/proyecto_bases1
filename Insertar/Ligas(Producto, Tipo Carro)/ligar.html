@@ -13,6 +13,7 @@
         <p id="titulo_pagina">Ligar Producto-Repuesto</p>
     </center>
     <datalist id="lista_carros">
+        <option value="hooa">jose</option>
     </datalist>
     <datalist id="lista_repuestos">
     </datalist>
@@ -28,11 +29,12 @@
         <input type="submit" value="Crear liga">
         
     </form>
-    <script src="../js/html_changer.js"></script>
+    <script src="../../JS/html_changer.js"></script>
     <script>
         function main(){
             cambiarInnerHTML("lista_carros","pedir_carros.php");
             cambiarInnerHTML("lista_repuestos","pedir_repuestos.php");
+            //alert("Ok");
         }
         window.onload = main;
     </script>
