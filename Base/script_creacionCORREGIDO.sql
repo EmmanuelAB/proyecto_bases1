@@ -37,7 +37,7 @@ CREATE TABLE carro (
     placa varchar(10) PRIMARY KEY,
     idtipocarro int,
     cedula int,
-    CONSTRAINT carro_idtipocarro_fkey FOREIGN KEY (idtipocarro) REFERENCES tipocarro(idtipocarro)
+    CONSTRAINT carro_idtipocarro_fkey FOREIGN KEY (idtipocarro) REFERENCES tipocarro(idtipocarro),
     CONSTRAINT carro_cedula_fkey FOREIGN KEY (cedula) REFERENCES cliente(cedula)
 );
 
@@ -95,7 +95,7 @@ BEGIN
 	RETURN total;
 END;
 $BODY$
-  LANGUAGE plpgsql VOLATILE
+  LANGUAGE plpgsql VOLATILE;
 
 --                                                     INSERCION DE DATOS DE EJEMPLO
  INSERT INTO tipocarro (marca, modelo, año) VALUES 
