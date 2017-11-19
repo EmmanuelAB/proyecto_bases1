@@ -38,7 +38,6 @@ CREATE TABLE carro (
     idtipocarro int,
     cedula int,
     CONSTRAINT carro_idtipocarro_fkey FOREIGN KEY (idtipocarro) REFERENCES tipocarro(idtipocarro)
-    CONSTRAINT carro_cedula_fkey FOREIGN KEY (cedula) REFERENCES cliente(cedula)
 );
 
 CREATE TABLE entradaexp (
