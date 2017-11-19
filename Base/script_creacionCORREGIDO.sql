@@ -82,7 +82,7 @@ begin
 end;
 $$;
 
-CREATE OR REPLACE FUNCTION total(cantidad integer, codigo integer, tipocarro integer)
+CREATE OR REPLACE FUNCTION total(cantidad_p integer, codigo_p integer, tipocarro_p integer)
   RETURNS integer AS
 $BODY$
 DECLARE	
@@ -90,8 +90,9 @@ precio integer;
 DECLARE
 total integer;
 BEGIN
-	SELECT a.precio into precio FROM aplicapara a WHERE a.codigoproducto = codigo and a.idtipocarro=tipocarro;
-	total = precio * cantidad;
+	SELECT a.precio into precio FROM aplicapara a WHERE a.codigoproducto = codigo_p and a.idtipocarro=tipocarro_p;
+	UPDATE aplicapara set cantidad = cantidad-cantidad_p where codigoproducto = codigo_p and idtipocarro=tipocarro_p;
+    total = precio * cantidad_p;
 	RETURN total;
 END;
 $BODY$

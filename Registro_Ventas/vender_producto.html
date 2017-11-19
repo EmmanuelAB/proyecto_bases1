@@ -26,15 +26,20 @@
                     <td><label>Fecha</label></td>
                     <td><input name="fecha" type="date"></td>
                 </tr>
-
-                <tr>
-                    <td><label>Código Producto </label></td>
-                    <td><input name="cod" autocomplete="off"  list="codigos" type="text"></td>
-                </tr>
-
+                
                 <tr>
                     <td><label>Tipo de Carro</label></td>
-                    <td><input name="tipocarro" autocomplete="off" list="tiposcarro" type="text"></td>
+                    <td><input id="tipocarro" name="tipocarro" onchange="llenar_codigos_producto()" autocomplete="off" list="tiposcarro" type="text"></td>
+                </tr>
+                
+                <tr>
+                    <td><label>Código Producto </label></td>
+                    <td><input id="codigo" name="cod" autocomplete="off" onchange="actualizar_precio()" list="codigos" type="text"></td>
+                </tr>
+                
+                <tr>
+                    <td><b>Precio Unitario:</b></td>
+                    <td><b id="precio"></b></td>
                 </tr>
 
                 <tr>
@@ -57,14 +62,22 @@
             cambiarInnerHTML("clientes","pedir_clientes.php");
         }
         function llenar_codigos_producto() {
-            cambiarInnerHTML("codigos", "pedir_codigos_producto.php");
+            var idcarro = document.getElementById("tipocarro").value;
+            cambiarInnerHTML("codigos", "pedir_codigos_producto.php?c_tipocarro="+idcarro);
+            actualizar_precio();
         }
         function llenar_tiposcarro() {
             cambiarInnerHTML("tiposcarro", "pedir_tipos_carro.php");
         }
+        function actualizar_precio(){
+            var idtipo = document.getElementById("tipocarro").value;
+            var codigo = document.getElementById("codigo").value;
+            if(idtipo!="" && codigo!=""){
+                cambiarInnerHTML("precio","pedir_precio.php?c_tipocarro="+idtipo+"&c_codigo="+codigo);
+            }r
+        }
         window.onload = llenar_clientes;
         llenar_tiposcarro();
-        llenar_codigos_producto();
     </script>
 </body>
 </html>
