@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../Estilos/estilo_header_comun.css">
     <link rel="stylesheet" type="text/css" href="../Estilos/titulo_pagina.css">
     <link rel="stylesheet" type="text/css" href="../Estilos/estilo_formularios.css">
+    <link rel="stylesheet" type="text/css" href="../Estilos/estilos_finales.css">
 </head>
 <body>
     <iframe src="../Plantillas/header_comun/header_comun.html"></iframe>
@@ -14,7 +15,7 @@
         <table align="center">
             <tr>
                 <td>ID Carro</td>
-                <td> <input type="text" name="c_idc"></td>
+                <td> <input type="text" list="tipos" name="c_idc"></td>
             </tr>
             <tr>
                 <td><br></td>
@@ -22,5 +23,13 @@
             </tr>
         </table>
     </form>
+    <datalist id="tipos"></datalist>
+    <script src="../JS/html_changer.js"></script>
+    <script>
+        function llenar_tiposcarro(){
+            cambiarInnerHTML("tipos","../Registro_Ventas/pedir_tipos_carro.php");
+        }
+        window.onload = llenar_tiposcarro;
+    </script>
 </body>
 </html>

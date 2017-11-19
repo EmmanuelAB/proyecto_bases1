@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../../Estilos/estilo_header_comun.css">
     <link rel="stylesheet" type="text/css" href="../../Estilos/titulo_pagina.css">
     <link rel="stylesheet" type="text/css" href="../../Estilos/estilo_formularios.css">
+    <link rel="stylesheet" type="text/css" href="../../Estilos/estilos_finales.css">
 </head>
     <body>
         <iframe src="../../Plantillas/header_comun/header_comun.html"></iframe>
@@ -14,10 +15,18 @@
             <table align="center">
                 <tr>
                     <td>Código</td>
-                    <td><input type="number" name="c_cod" id="t_id"></td>
+                    <td><input type="text" list="codigos" name="c_cod" id="t_id"></td>
                     <td><input type="submit" name="b_buscar"></td>
                 </tr>
             </table>
         </form>
+        <datalist id="codigos"></datalist>
+        <script src="../../JS/html_changer.js"></script>
+        <script>
+            function llenar_codigos(){
+                cambiarInnerHTML("codigos","../../Registro_Ventas/pedir_codigos_producto.php");
+            }
+            window.onload = llenar_codigos;
+        </script>
     </body>
 </html>

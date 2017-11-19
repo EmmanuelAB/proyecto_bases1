@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Borrar cliente</title>
+    <title>Eliminar Producto</title>
     <link rel="stylesheet" type="text/css" href="../Estilos/estilo_header_comun.css">
     <link rel="stylesheet" type="text/css" href="../Estilos/titulo_pagina.css">
     <link rel="stylesheet" type="text/css" href="../Estilos/estilo_formularios.css">
     <link rel="stylesheet" type="text/css" href="../Estilos/estilos_finales.css">
 </head>
-<body>
+    <body>
     <iframe src="../Plantillas/header_comun/header_comun.html"></iframe>
-    <center><p id="titulo_pagina">Borrado Clientes</p></center>
-    <form name="formIns" action="Eliminar_cliente.php" method="get">
+    <center><p id="titulo_pagina">Borrar Producto</p></center>
+    <form name="formIns" action="Eliminar_prod.php" method="get">
         <table align="center">
             <tr>
-                <td>Cedula Cliente</td>
-                <td><input type="text" list="cedulas" name="c_ced"></td>
+                <td>Identificador Producto</td>
+                <td><input type="text" list="codigos" name="c_prod"></td>
             </tr>
             <tr>
                 <td><br></td>
@@ -23,13 +23,13 @@
             </tr>
         </table>
     </form>
-    <datalist id="cedulas"></datalist>
+    <datalist id="codigos"></datalist>
     <script src="../JS/html_changer.js"></script>
     <script>
-        function llenar_clientes(){
-            cambiarInnerHTML("cedulas","../Registro_Ventas/pedir_clientes.php");
+        function llenar_codigos(){
+            cambiarInnerHTML("codigos","../Registro_Ventas/pedir_codigos_producto.php");
         }
-        window.onload = llenar_clientes;
+        window.onload = llenar_codigos;
     </script>
 </body>
 </html>

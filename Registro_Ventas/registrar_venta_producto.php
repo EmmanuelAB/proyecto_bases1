@@ -1,4 +1,8 @@
 <?php
+
+    //Las siguientes dos lineas permite mostrar los errores ocurridos en la pagina
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
     require("../Base/CredencialesProyecto.php");
     $fecha = $_GET["fecha"];
     $cedula = $_GET["cedula"];
@@ -8,8 +12,9 @@
 
     $string_connection = "host=".$db_direction." dbname=".$db_name. " user=".$db_username. " password=".$db_password;
     $connection = pg_connect($string_connection) or die("No se pudo conectar".pg_last_error());
-    $precio = pg_query("select a.precio from aplicapara a where a.codigoproducto = $codigo and a.idtipocarro = $tipocarro");
-    $total = $cantidad * $precio;
+    $res1 = pg_query("select * from total($cantidad, $codigo, $tipocarro);");
+    $res_p =  pg_fetch_array($res1, null, PGSQL_ASSOC);
+    $total = $res_p["total"];
     $res = pg_query("insert into entradaexp(codigoproducto, idtipocarro, fecha, cantidad, total, cedula)".
                      "values ($codigo,$tipocarro, '$fecha',$cantidad,$total, $cedula);");
     if($res){

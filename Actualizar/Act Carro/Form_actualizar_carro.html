@@ -6,18 +6,27 @@
     <link rel="stylesheet" type="text/css" href="../../Estilos/estilo_header_comun.css">
     <link rel="stylesheet" type="text/css" href="../../Estilos/titulo_pagina.css">
     <link rel="stylesheet" type="text/css" href="../../Estilos/estilo_formularios.css">
+    <link rel="stylesheet" type="text/css" href="../../Estilos/estilos_finales.css">
 </head>
 <body>
-<iframe src="../../Plantillas/header_comun/header_comun.html"></iframe>
-<center><p id="titulo_pagina">Actualizar Carros</p></center>
-<form name="formIns" action="Actualizar_carro(send).php" method="get">
-    <table align="center">
-        <tr>
-            <td>Placa</td>
-            <td><input type="text" name="ca_placa" id="ca_id"></td>
-            <td><input type="submit" name="b_buscar"></td>
-        </tr>
-    </table>
-</form>
+    <iframe src="../../Plantillas/header_comun/header_comun.html"></iframe>
+    <center><p id="titulo_pagina">Actualizar Carros</p></center>
+    <form name="formIns" action="Actualizar_carro(send).php" method="get">
+        <table align="center">
+            <tr>
+                <td>Placa</td>
+                <td><input type="text"  list="placas" name="ca_placa" id="ca_id"></td>
+                <td><input type="submit" id="boton" name="b_buscar"></td>
+            </tr>
+        </table>
+    </form>
+    <datalist id="placas"></datalist>
+    <script src="../../JS/html_changer.js"></script>
+    <script>
+        function llenar_placas(){
+            cambiarInnerHTML("placas","../../Eliminar/pedir_placas.php");
+        }
+        window.onload = llenar_placas;
+    </script>
 </body>
 </html>

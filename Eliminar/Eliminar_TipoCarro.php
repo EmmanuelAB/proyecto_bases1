@@ -1,12 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Registro eliminado</title>
-</head>
-<body>
-
-    <?php
+<?php
 
         //Las siguientes dos lineas permite mostrar los errores ocurridos en la pagina
         error_reporting(E_ALL);
@@ -44,7 +36,4 @@
         echo "<h2><a href='../Home/Home.html'>Regresar al home</a></h2>";
 
         pg_close($connection);
-    ?>
-
-</body>
-</html>
+?>

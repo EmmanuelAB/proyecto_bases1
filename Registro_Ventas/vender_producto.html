@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../Estilos/titulo_pagina.css">
     <link rel="stylesheet" type="text/css" href="../Estilos/estilo_formularios.css">
     <link rel="stylesheet" type="text/css" href="../Estilos/estilo_header_comun.css">
+    <link rel="stylesheet" type="text/css" href="../Estilos/estilos_finales.css">
 </head>
 <body>
     <iframe src="../Plantillas/header_comun/header_comun.html"></iframe>
@@ -28,12 +29,12 @@
 
                 <tr>
                     <td><label>Código Producto</label></td>
-                    <td><input name="cod" type="number"></td>
+                    <td><input name="cod" list="codigos" type="text"></td>
                 </tr>
 
                 <tr>
                     <td><label>Tipo de Carro</label></td>
-                    <td><input name="tipocarro" type="number"></td>
+                    <td><input name="tipocarro" list="tiposcarro" type="text"></td>
                 </tr>
 
                 <tr>
@@ -42,7 +43,7 @@
                 </tr>
 
                 <tr><td><td>
-                    <br><br><input type="submit" value="Registrar">
+                    <br><input type="submit" value="Registrar">
                 </td></tr>
             </table>
         </form>
@@ -54,16 +55,16 @@
     <script>
         function llenar_clientes(){
             cambiarInnerHTML("clientes","pedir_clientes.php");
-            window.onload = llenar_codigos_producto;
         }
         function llenar_codigos_producto() {
             cambiarInnerHTML("codigos", "pedir_codigos_producto.php");
-            window.onload = llenar_tipos;
         }
         function llenar_tiposcarro() {
             cambiarInnerHTML("tiposcarro", "pedir_tipos_carro.php");
         }
         window.onload = llenar_clientes;
+        llenar_tiposcarro();
+        llenar_codigos_producto();
     </script>
 </body>
 </html>

@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../Estilos/estilo_header_comun.css">
     <link rel="stylesheet" type="text/css" href="../Estilos/titulo_pagina.css">
     <link rel="stylesheet" type="text/css" href="../Estilos/estilo_formularios.css">
+    <link rel="stylesheet" type="text/css" href="../Estilos/estilos_finales.css">
 </head>
 <body>
     <iframe src="../Plantillas/header_comun/header_comun.html"></iframe>
@@ -14,7 +15,7 @@
         <table align="center">
             <tr>
                 <td>Placa</td>
-                <td><input type="text" name="c_plac"></td>
+                <td><input type="text" list="placas" name="c_plac"></td>
             </tr>
             <tr>
                 <td><br></td>
@@ -22,5 +23,13 @@
             </tr>
         </table>
     </form>
+    <datalist id="placas"></datalist>
+    <script src="../JS/html_changer.js"></script>
+    <script>
+        function llenar_placas(){
+            cambiarInnerHTML("placas","pedir_placas.php");
+        }
+        window.onload = llenar_placas;
+    </script>
 </body>
 </html>
