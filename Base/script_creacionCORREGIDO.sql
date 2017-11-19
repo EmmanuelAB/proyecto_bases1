@@ -90,7 +90,7 @@ precio integer;
 DECLARE
 total integer;
 BEGIN
-	SELECT a.precio into precio FROM aplicapara a WHERE a.codigoproducto = codigo;
+	SELECT a.precio into precio FROM aplicapara a WHERE a.codigoproducto = codigo and a.idtipocarro=tipocarro;
 	total = precio * cantidad;
 	RETURN total;
 END;

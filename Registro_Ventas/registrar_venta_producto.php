@@ -15,8 +15,8 @@
     $res1 = pg_query("select * from total($cantidad, $codigo, $tipocarro);");
     $res_p =  pg_fetch_array($res1, null, PGSQL_ASSOC);
     $total = $res_p["total"];
-    $res = pg_query("insert into entradaexp(codigoproducto, idtipocarro, fecha, cantidad, total, cedula)".
-                     "values ($codigo,$tipocarro, '$fecha',$cantidad,$total, $cedula);");
+    $res = pg_query("insert into entradaexp(descripcion,codigoproducto, idtipocarro, fecha, cantidad, total, cedula)".
+                     "values ('venta',$codigo,$tipocarro, '$fecha',$cantidad,$total, $cedula);");
     if($res){
         echo "<link rel='stylesheet' type='text/css' href='../Estilos/estilo_header_comun.css'>";
         echo '<link rel="stylesheet" type="text/css" href="../Estilos/titulo_pagina.css">';

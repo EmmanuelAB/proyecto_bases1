@@ -11,6 +11,9 @@
 <body>
     <iframe src="../Plantillas/header_comun/header_comun.html"></iframe>
     <center><p id="titulo_pagina">Registro Vehículos</p></center>
+    <datalist id="clientes"></datalist>
+    <datalist id="tipocarros"></datalist>
+
     <form name="formIns" action="Insertar_carro.php" method="get">
         <table align="center">
             <tr>
@@ -19,11 +22,11 @@
             </tr>
             <tr>
                 <td>Tipo Carro</td>
-                <td><input type="text" name="ca_tipo"></td>
+                <td><input type="text" list="tipocarros" autocomplete="off" name="ca_tipo"></td>
             </tr>
             <tr>
                 <td>Cedula Cliente</td>
-                <td><input type="text" name="ca_cedcl"></td>
+                <td><input type="text" list="clientes" autocomplete="off" name="ca_cedcl"></td>
             </tr>
             <tr>
                 <td><br></td>
@@ -34,5 +37,13 @@
             </tr>
         </table>
     </form>
+    <script src="../JS/html_changer.js"></script>
+    <script>
+        function main(){
+            cambiarInnerHTML("clientes","../Buscar/buscar_entradaexp/pedir_clientes.php");
+            cambiarInnerHTML("tipocarros","../Registro_Ventas/pedir_tipos_carro.php");
+        }
+        window.onload = main;
+    </script>
 </body>
 </html>

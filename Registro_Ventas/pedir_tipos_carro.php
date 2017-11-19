@@ -11,7 +11,7 @@
         $marca = $registro["marca"];
         $año = $registro["año"];
         $tipo = $registro["idtipocarro"];
-        echo "<option value='$tipo'>$modelo $marca $año</option>";
+        echo "<option value='$tipo'>$marca $modelo $año</option>";
     }
 
     pg_close($connection);

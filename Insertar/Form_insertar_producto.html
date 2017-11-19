@@ -19,7 +19,11 @@
             </tr>
             <tr>
                 <td>Tipo</td>
-                <td><input type="text" name="p_tipo"></td>
+                <td><input type="text" autocomplete="off" list="tipos" name="p_tipo"></td>
+                <datalist id="tipos">
+                    <option value="repuesto"></option>
+                    <option value="quimico"></option>                    
+                </datalist>
             </tr>
             <tr>
                 <td><br></td>
