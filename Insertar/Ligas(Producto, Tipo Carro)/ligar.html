@@ -6,7 +6,8 @@
     <link rel="stylesheet" type="text/css" href="../../Estilos/estilo_formularios.css">
     <link rel="stylesheet" type="text/css" href="../../Estilos/titulo_pagina.css">
     <link rel="stylesheet" type="text/css" href="../../Estilos/estilo_header_comun.css">
-      <link rel="stylesheet" type="text/css" href="../Estilos/estilos_finales.css">
+      <link rel="stylesheet" type="text/css" href="../../Estilos/estilos_finales.css">
+      <link rel="stylesheet" type="text/css" href="../../Estilos/estilos_finales.css">
   </head>
   <body>
     <iframe src="../../Plantillas/header_comun/header_comun.html"></iframe>
@@ -19,15 +20,27 @@
     <datalist id="lista_repuestos">
     </datalist>
     <form align="center" action="ligar.php">
-        <label>Carro</label><input name= "c_carro" id="carro" list="lista_carros">
-        <br><br>
-        <label>Repuesto</label><input name="c_repuesto" id="repuesto" list="lista_repuestos">
-        <br><br>
-        <label>Precio</label><input name="c_precio" type="number">
-        <br><br>
-        <label>Cantidad</label><input name="c_cantidad" type="number">
-        <br><br>
-        <input type="submit" value="Crear liga">
+        <table align="center">
+            <tr>
+                <td><label>Carro</label><input name= "c_carro" id="carro" list="lista_carros">
+                    <br><br></td>
+            </tr>
+            <tr>
+                <td><label>Repuesto</label><input name="c_repuesto" id="repuesto" list="lista_repuestos">
+                    <br><br></td>
+            </tr>
+            <tr>
+                <td><label>Precio</label><input name="c_precio" type="number">
+                    <br><br></td>
+            </tr>
+            <tr>
+                <td><label>Cantidad</label><input name="c_cantidad" type="number">
+                    <br><br></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Crear liga"></td>
+            </tr>
+        </table>
         
     </form>
     <script src="../../JS/html_changer.js"></script>
