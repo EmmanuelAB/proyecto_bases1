@@ -32,7 +32,8 @@
             if($resultado){
                 echo "<link rel='stylesheet' type='text/css' href='../../Estilos/estilo_header_comun.css'>";
                 echo '<link rel="stylesheet" type="text/css" href="../../Estilos/titulo_pagina.css">';
-                echo '<link rel="stylesheet" type="text/css" href="../../Estilos/estilo_formularios.css">';                
+                echo '<link rel="stylesheet" type="text/css" href="../../Estilos/estilo_formularios.css">';
+                echo '<link rel="stylesheet" type="text/css" href="../../Estilos/estilos_finales.css">';
                 echo "<iframe src='../../Plantillas/header_comun/header_comun.html'></iframe>";
                 echo "<center><p id='titulo_pagina'>Actualización exitosa!</p></center>";
 

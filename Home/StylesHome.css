@@ -31,7 +31,7 @@ header .logo{
     overflow: hidden;
 }
 
-/**Propiedades de elementtos principales del menu**/
+/**Propiedades de elementos principales del menu**/
 header nav > ul > li > a{
     color: white;
     font-size: 14px;
@@ -39,20 +39,20 @@ header nav > ul > li > a{
     text-align: center;
     text-decoration: none;
     display: block;
-    padding: 10px 40px;
+    padding: 10px 15px;
     position: relative;
 }
 
 /**Propiedades de elementos secundarios del menu**/
-header nav > ul > li > ul a{
+header nav > ul > li > ul > li > a{
     color:black;
     border-radius: 15px;
     background-color: white;
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
     text-decoration: none;
     display: block;
-    padding: 10px 30px;
+    padding: 10px 15px;
     position: relative;
 }
 

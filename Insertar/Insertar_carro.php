@@ -30,6 +30,7 @@
         if($resultado){
             echo "<link rel='stylesheet' type='text/css' href='../Estilos/estilo_header_comun.css'>";
             echo '<link rel="stylesheet" type="text/css" href="../Estilos/titulo_pagina.css">';
+            echo '<link rel="stylesheet" type="text/css" href="../Estilos/estilos_finales.css">';
             echo "<iframe src='../Plantillas/header_comun/header_comun.html'></iframe>";
             echo "<center><p id='titulo_pagina'>Inserción exitosa!</p></center>";
 
@@ -37,8 +38,6 @@
         else{
             echo "<h1>Insercion fallida!</h1>";
         }
-
-        echo "<h2><a href='../Home/Home.html'>Regresar al home</a></h2>";
 
         pg_close($connection);
     ?>

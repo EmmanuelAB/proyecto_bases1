@@ -22,14 +22,18 @@
         $connection = pg_connect($string_connection) or die("No se pudo conectar".pg_last_error());
 
         //Consulta a ejecutar sobre la base
-        $query = "Delete From carro WHERE placa = $placa";
+        $query = "Delete From carro WHERE placa = '$placa'";
 
         $resultado = pg_query($connection,$query);
 
         if($resultado){
             if (pg_affected_rows($resultado)){
-                echo "<h1>Registro eliminado!</h1>";
-                echo "Se han eliminado" . pg_affected_rows($resultado) . "filas!";
+                echo "<link rel='stylesheet' type='text/css' href='../Estilos/estilo_header_comun.css'>";
+                echo '<link rel="stylesheet" type="text/css" href="../Estilos/titulo_pagina.css">';
+                echo '<link rel="stylesheet" type="text/css" href="../Estilos/estilo_formularios.css">';
+                echo '<link rel="stylesheet" type="text/css" href="../Estilos/estilos_finales.css">';
+                echo "<iframe src='../Plantillas/header_comun/header_comun.html'></iframe>";
+                echo "<center><p id='titulo_pagina'>Registro Eliminado</p></center>";
             }
             else{
                 echo "<h1>Fallo en la eliminacion!</h1>";
@@ -40,8 +44,6 @@
         else{
             echo "<h1>Fallo en la eliminacion!</h1>";
         }
-
-        echo "<h2><a href='../Home/Home.html'>Regresar al home</a></h2>";
 
         pg_close($connection);
     ?>

@@ -26,7 +26,8 @@
             if(pg_num_rows($resultado) >= 1){
                 echo "<link rel='stylesheet' type='text/css' href='../../Estilos/estilo_header_comun.css'>";
                 echo '<link rel="stylesheet" type="text/css" href="../../Estilos/titulo_pagina.css">';
-                echo '<link rel="stylesheet" type="text/css" href="../../Estilos/estilo_formularios.css">';                
+                echo '<link rel="stylesheet" type="text/css" href="../../Estilos/estilo_formularios.css">';
+                echo '<link rel="stylesheet" type="text/css" href="../../Estilos/estilos_finales.css">';
                 echo "<iframe src='../../Plantillas/header_comun/header_comun.html'></iframe>";
                 echo "<center><p id='titulo_pagina'>Recuperación exitosa!</p></center>";
                 $registro = pg_fetch_array($resultado, null, PGSQL_ASSOC);
