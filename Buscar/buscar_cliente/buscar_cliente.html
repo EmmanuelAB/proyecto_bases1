@@ -17,7 +17,7 @@
     <center>
       <table>
           <tr>
-              <td><label>Nombre</label><input type="text" name="c_nom" id="c_nom"></td>
+              <td><label>Nombre</label><input type="text" pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" name="c_nom" id="c_nom"></td>
               <td><button onclick="buscar()">Buscar</button></td>
           </tr>
       </table>

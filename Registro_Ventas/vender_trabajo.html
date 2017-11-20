@@ -18,22 +18,22 @@
         <table>
             <tr>
                 <td><label>Fecha</label></td>
-                <td><input name="c_fecha" type="date"></td>
+                <td><input pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" name="c_fecha" type="date"></td>
             </tr>
 
             <tr>
                 <td><label>Cliente</label></td>
-                <td><input name="c_cedula" list="clientes" type="text"></td>
+                <td><input pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" name="c_cedula" list="clientes" type="text"></td>
             </tr>
 
             <tr>
                 <td><label>Decripción</label></td>
-                <td><input name="c_descrip" type="text" placeholder="Ej: Cambio aceite"></td>
+                <td><input pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" name="c_descrip" type="text" placeholder="Ej: Cambio aceite"></td>
             </tr>
 
             <tr>
                 <td><label>Precio</label></td>
-                <td><input name="c_precio" type="number"></td>
+                <td><input pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" name="c_precio" type="number"></td>
             </tr>
 
             <tr><td><td>

@@ -19,22 +19,22 @@
 
                 <tr>
                     <td><label>Cliente</label></td>
-                    <td><input name="cedula" autocomplete="off" list="clientes" type="text"></td>
+                    <td><input pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" name="cedula" autocomplete="off" list="clientes" type="text"></td>
                 </tr>
 
                 <tr>
                     <td><label>Fecha</label></td>
-                    <td><input name="fecha" type="date"></td>
+                    <td><input pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" name="fecha" type="date"></td>
                 </tr>
                 
                 <tr>
                     <td><label>Tipo de Carro</label></td>
-                    <td><input id="tipocarro" name="tipocarro" onchange="llenar_codigos_producto()" autocomplete="off" list="tiposcarro" type="text"></td>
+                    <td><input pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" id="tipocarro" name="tipocarro" onchange="llenar_codigos_producto()" autocomplete="off" list="tiposcarro" type="text"></td>
                 </tr>
                 
                 <tr>
                     <td><label>Código Producto </label></td>
-                    <td><input id="codigo" name="cod" autocomplete="off" onchange="actualizar_precio()" list="codigos" type="text"></td>
+                    <td><input pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" id="codigo" name="cod" autocomplete="off" onchange="actualizar_precio()" list="codigos" type="text"></td>
                 </tr>
                 
                 <tr>
@@ -44,7 +44,7 @@
 
                 <tr>
                     <td><label>Cantidad</label></td>
-                    <td><input name="cant" type="number"></td>
+                    <td><input pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" name="cant" type="number"></td>
                 </tr>
 
                 <tr><td><td>

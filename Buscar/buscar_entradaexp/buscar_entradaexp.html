@@ -20,7 +20,7 @@
     <center>
         <table>
             <tr>
-                <td><label>Cliente</label><input list="clientes" autocomplete="off" id="cedula" placeholder="cedula"></td>
+                <td><label>Cliente</label><input list="clientes" autocomplete="off" pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" id="cedula" placeholder="cedula"></td>
                 <td><button onclick="listar_entradas()">Buscar</button></td>
             </tr>
         </table>

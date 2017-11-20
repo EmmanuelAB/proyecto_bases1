@@ -22,19 +22,19 @@
     <form align="center" action="ligar.php">
         <table align="center">
             <tr>
-                <td><label>Carro</label><input name= "c_carro" id="carro" list="lista_carros">
+                <td><label>Carro</label><input name= "c_carro" pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" id="carro" list="lista_carros">
                     <br><br></td>
             </tr>
             <tr>
-                <td><label>Repuesto</label><input name="c_repuesto" id="repuesto" list="lista_repuestos">
+                <td><label>Repuesto</label><input name="c_repuesto" pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" id="repuesto" list="lista_repuestos">
                     <br><br></td>
             </tr>
             <tr>
-                <td><label>Precio</label><input name="c_precio" type="number">
+                <td><label>Precio</label><input name="c_precio" pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" type="number">
                     <br><br></td>
             </tr>
             <tr>
-                <td><label>Cantidad</label><input name="c_cantidad" type="number">
+                <td><label>Cantidad</label><input name="c_cantidad" pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" type="number">
                     <br><br></td>
             </tr>
             <tr>

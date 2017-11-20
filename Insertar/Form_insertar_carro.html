@@ -18,15 +18,15 @@
         <table align="center">
             <tr>
                 <td>Placa</td>
-                <td><input type="text" name="ca_plac"></td>
+                <td><input type="text" pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" name="ca_plac"></td>
             </tr>
             <tr>
                 <td>Tipo Carro</td>
-                <td><input type="text" list="tipocarros" autocomplete="off" name="ca_tipo"></td>
+                <td><input type="text" pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" list="tipocarros" autocomplete="off" name="ca_tipo"></td>
             </tr>
             <tr>
                 <td>Cedula Cliente</td>
-                <td><input type="text" list="clientes" autocomplete="off" name="ca_cedcl"></td>
+                <td><input type="text" pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" list="clientes" autocomplete="off" name="ca_cedcl"></td>
             </tr>
             <tr>
                 <td><br></td>

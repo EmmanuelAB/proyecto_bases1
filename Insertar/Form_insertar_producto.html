@@ -15,11 +15,11 @@
         <table align="center">
             <tr>
                 <td>Nombre</td>
-                <td><input type="text" name="p_nom"></td>
+                <td><input type="text" pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" name="p_nom"></td>
             </tr>
             <tr>
                 <td>Tipo</td>
-                <td><input type="text" autocomplete="off" list="tipos" name="p_tipo"></td>
+                <td><input type="text" pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" list="tipos" name="p_tipo"></td>
                 <datalist id="tipos">
                     <option value="repuesto"></option>
                     <option value="quimico"></option>                    
