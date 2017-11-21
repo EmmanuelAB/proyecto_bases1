@@ -6,7 +6,11 @@
  * Time: 03:40 PM
  */
 //Credenciales de la base
-$db_direction = "localhost";
-$db_name = "repuestera";
-$db_username = "postgres";
-$db_password = "bases123";
+require("crypting.php");
+
+$db_direction = my_decrypt("VW2Zmkj+qbVcfOkantccsA==");
+$db_name      = my_decrypt("sl5vBxn8gG+gmXV28l1dFA==");
+$db_username  = my_decrypt("v1S6B0XlfaomQXhUd2UNhQ==");
+$db_password  = my_decrypt("5Rm4CEAxdlF5U+u0Jmmd7w==");
+
+?>
