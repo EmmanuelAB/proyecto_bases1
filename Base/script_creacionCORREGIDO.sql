@@ -29,16 +29,20 @@ CREATE TABLE aplicapara (
     cantidad int,
 
     CONSTRAINT idaplicapara PRIMARY KEY (idtipocarro, codigoproducto),
-    CONSTRAINT aplicapara_idtipocarro_fkey FOREIGN KEY (idtipocarro) REFERENCES tipocarro(idtipocarro),
+    CONSTRAINT aplicapara_idtipocarro_fkey FOREIGN KEY (idtipocarro) REFERENCES tipocarro(idtipocarro) 
+    	ON DELETE SET NULL ON UPDATE CASCADE,
     CONSTRAINT aplicapara_codigoproducto_fkey FOREIGN KEY (codigoproducto) REFERENCES producto(codigo)
+    	ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 CREATE TABLE carro (
     placa varchar(10) PRIMARY KEY,
     idtipocarro int,
     cedula int,
-    CONSTRAINT carro_idtipocarro_fkey FOREIGN KEY (idtipocarro) REFERENCES tipocarro(idtipocarro),
+    CONSTRAINT carro_idtipocarro_fkey FOREIGN KEY (idtipocarro) REFERENCES tipocarro(idtipocarro)
+    ON DELETE SET NULL ON UPDATE CASCADE,
     CONSTRAINT carro_cedula_fkey FOREIGN KEY (cedula) REFERENCES cliente(cedula)
+    ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 CREATE TABLE entradaexp (
@@ -51,9 +55,12 @@ CREATE TABLE entradaexp (
     codigoproducto int,      --si vende producto pone el codigo del producto
     idtipocarro int,         --y el id del carro (por que el pk son ambos atributos)
 
-    CONSTRAINT entradaexp_cedula_fkey FOREIGN KEY (cedula) REFERENCES cliente(cedula),
-    CONSTRAINT entradaexp_codigoproducto_fkey FOREIGN KEY (codigoproducto) REFERENCES producto(codigo),
+    CONSTRAINT entradaexp_cedula_fkey FOREIGN KEY (cedula) REFERENCES cliente(cedula)
+    	ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT entradaexp_codigoproducto_fkey FOREIGN KEY (codigoproducto) REFERENCES producto(codigo)
+    	ON DELETE SET NULL ON UPDATE CASCADE,
     CONSTRAINT entradaexp_idtipocarro_fkey FOREIGN KEY (idtipocarro) REFERENCES tipocarro(idtipocarro)
+    	ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 
