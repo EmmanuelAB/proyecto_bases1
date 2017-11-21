@@ -1,5 +1,7 @@
 body{
     background-image: url("../Imagenes/engranajes_metalicos_20150213_1147103737.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 table{
     border: solid;
