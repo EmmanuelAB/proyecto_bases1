@@ -101,32 +101,14 @@ $BODY$
 --                                                     INSERCION DE DATOS DE EJEMPLO
  INSERT INTO tipocarro (marca, modelo, año) VALUES 
 	 ('Toyota',	'Corolla',		1989),
-	 ('Toyota',	'Starlet',		1990),
 	 ('Nissan',	'Sentra',		1995),
-	 ('Nissan',	'D21',			1995),
-	 ('Nissan',	'SentraB12',	1988),
-	 ('Nissan',	'SentraB13',	1990),
-	 ('Honda',	'Civic',		1995),
-	 ('Honda',	'Accord',		1998),
-	 ('Toyota',	'Hilux',		2010),
-	 ('Subaru',	'Impeza',		2012),
-	 ('Toyota',	'Corolla',		1992),
-	 ('Toyota',	'Corolla', 		1999),
-	 ('Nissan',	'Versa',		2017),
-	 ('Nissan',	'Versa',		2015)
+	 ('Honda',	'Accord',		1998)
  ;
  
   INSERT INTO cliente (cedula, nombre, apellido1, apellido2, telefono1, telefono2, direccion) VALUES
-	 (1234563,	'Gerardo', 'Soto',      'Cruz',      63312287,	0	,'El llano, Alajuela'),
-	 (1234564,	'Estefany','Molina',    'Espinoza',  61345987,	0	,'Tacares, Alajuela'),
-	 (1934981,	'Pepe',    'Ramirez',   'Arroyo',    89321745,	0	,'La Uruca, San José'),
-	 (4240867,	'Isaac',   'Mena',      'Lopez',     31232398,	0	,'San Joaquín, Heredia'),
-	 (1234562,	'María',   'Corrales',  'Bolaños',	 63412299,	0	,'Paraiso, Cartago'),
-	 (1234569,	'Jose',    'Alfaro',    'Rojas',     61512155,	0	,'Santa Cruz, Guanacaste'),
-	 (8182123,	'Mario',   'Gonzales',  'Perez',     48578121,	0	,'San Joaquín, Flores'),
-	 (1234567,	'Juana',   'Perez',     'Lopez',     60409125,	0	,'Puente de Piedra, Grecia'),
-	 (1234561,	'Maria',   'Alpizar',   'Mena',      61412255,	0	,'Osa, Cartago'),
-	 (1234568,	'Lucas',   'Rodriguez', 'Hidalgo',   61505125,	0	,'San Joaquin, Flores')
+	 (1234561,	'Gerardo', 'Soto',      'Cruz',      63312287,	0	,'El llano, Alajuela'),
+	 (1234562,	'Estefany','Molina',    'Espinoza',  61345987,	0	,'Tacares, Alajuela'),
+	 (1234563,	'Pepe',    'Ramirez',   'Arroyo',    89321745,	0	,'La Uruca, San José')
  ;
  
  INSERT INTO producto (nombre, tipo) VALUES
@@ -144,43 +126,35 @@ $BODY$
  ;
  
  INSERT INTO aplicapara (idtipocarro, codigoproducto, precio, cantidad) VALUES
-	 (1,	3,	5000,	1),
-	 (1,	2,	7500,	5),
-	 (1,	5,	15000,	8),
-	 (2,	5,	30000,	2),
-	 (3,	5,	45000,	9),
-	 (4,	2,	2000,	4),
-	 (2,	1,	17500,	12),
-	 (11,	1,	10000,	20)
+	 (1,	1,	5000,	20),
+	 (1,	2,	7500,	20),
+	 (1,	3,	15000,	20),
+	 (2,	4,	30000,	20),
+	 (2,	5,	45000,	20),
+	 (2,	6,	2000,	20),
+	 (3,	7,	17500,	20),
+	 (3,	1,	10000,	20)
 ;
 
  INSERT INTO carro (placa, idtipocarro, cedula) VALUES
-	 ('XYZ123',	1,	1234567),
-	 ('XYZ124',	2,	1234567),
-	 ('ABC123',	3,	1234564),
-	 ('ABX123',	6,	1234562)
+	 ('XYZ123',	1,	1234561),
+	 ('XYZ124',	2,	1234562),
+	 ('ABC123',	3,	1234563),
+	 ('ABX123',	2,	1234561)
  ;
 
 
 
- INSERT INTO entradaexp (fecha, descripcion, cantidad, total, cedula, codigoproducto, idtipocarro) VALUES
-	 ('2017-07-08'	,'venta',	           1,7500,	1234563,	2,1),
-	 ('2017-07-08'	,'venta',	           1,30000,	1234563,	5,2),
-	 ('2017-07-08'	,'venta',	           1,45000,	1234563,	5,3),
-	 ('2017-07-08'	,'venta',	           1,7000,	1934981,	2,4),
-	 ('2017-07-08'	,'venta',	           1,7000,	1934981,	5,3),
-	 ('2017-07-08'	,'venta',	           1,7000,	1934981,	1,2),
-	 ('2017-07-08'	,'venta',	           1,7000,	1234567,	2,4),
-	 ('2017-07-08'	,'cambio_aceite',      1,12500,	1234563,NULL,NULL),
-	 ('2017-07-08'	,'overhaul',	       1,30000,	1234563,NULL,NULL),
-	 ('2017-07-08'	,'venta',	           1,1000,	1234567,	5,3),
-	 ('2017-07-08'	,'venta',	           1,1000,	1234567,	1,2)
+ INSERT INTO entradaexp (fecha, descripcion, cantidad, total, cedula, idtipocarro, codigoproducto) VALUES
+	 ('2017-07-08'	,'venta',	           1,total(1,1,1),	1234561,	1,1),
+	 ('2017-07-08'	,'venta',	           2,total(2,2,1),	1234562,	1,2),
+	 ('2017-07-08'	,'venta',	           1,total(1,3,1),	1234563,	1,3),
+	 ('2017-07-08'	,'venta',	           1,total(1,4,2),	1234561,	2,4),
+	 ('2017-07-08'	,'venta',	           3,total(3,5,2),	1234562,	2,5),
+	 ('2017-07-08'	,'venta',	           1,total(1,6,2),	1234563,	2,6),
+	 ('2017-07-08'	,'venta',	           4,total(4,4,2),	1234561,	2,4),
+	 ('2017-07-08'	,'cambio_aceite',      1,32000,			1234562,NULL,NULL),
+	 ('2017-07-08'	,'overhaul',	       1,14000,			1234563,NULL,NULL),
+	 ('2017-07-08'	,'venta',	           2,total(2,7,3),	1234561,	3,7),
+	 ('2017-07-08'	,'venta',	           1,total(1,1,3),	1234562,	3,1)
  ;
- 
--- INSERT INTO entradaexp (fecha, descripcion, cantidad, total, cedula) VALUES
--- 	 ('2017-07-08'	,'cambio_aceite',      1,5000,	1234563),
---	 ('2017-07-08'	,'overhaul',	       1,50000,	1234563)
---;
- 
-
-
