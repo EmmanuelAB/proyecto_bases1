@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> 
+    <title>Registrar cliente nuevo</title>
+    <link rel="stylesheet" type="text/css" href="../Estilos/titulo_pagina.css">
+    <link rel="stylesheet" type="text/css" href="../Estilos/estilo_formularios.css">
+    <link rel="stylesheet" type="text/css" href="../Estilos/estilo_tablas.css">
+    <link rel="stylesheet" type="text/css" href="../Estilos/estilo_header_comun.css">
+    <link rel="stylesheet" type="text/css" href="../Estilos/estilos_finales.css">
+  </head>
+  <body>
+    <iframe src="../Plantillas/header_comun/header_comun.html"></iframe>
+    <center>
+        <p id="titulo_pagina">Aumentar precios por carro</p>
+    </center>
+    <datalist id="carros">
+    </datalist>
+    <center>
+        <table>
+            <tr>
+                <td>
+                <form action="aumentar.php">
+                    <label>Id Carro</label>
+                    <input type="text" list="carros" pattern="[A-Za-z0-9_-]{1,20}" 
+                           title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" 
+                           name="c_idcarro" id="c_nom">
+                    <br><br>
+                    <label>Porcentaje</label>
+                    <input type=number name="c_porc" placeholder="entero sin decimales">
+                    <br><br>
+                    <input type="submit" value="Enviar">
+                </form>
+                </td>
+            </tr>
+        </table>
+    </center>
+    <script src="../JS/html_changer.js"></script>
+    <script>
+        function main(){
+            var nombre = document.getElementById("c_nom").value;
+            cambiarInnerHTML("carros", "../Insertar/Ligas(Producto,\ Tipo\ Carro)/pedir_carros.php");
+        }
+        window.onload = main()
+    </script>
+  </body>
+  <footer>
+  </footer>
+</html>
