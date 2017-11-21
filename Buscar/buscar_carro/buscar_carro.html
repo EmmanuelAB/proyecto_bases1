@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8"> 
-    <title>Registrar cliente nuevo</title>
+    <title>Buscar carro</title>
     <link rel="stylesheet" type="text/css" href="../../Estilos/titulo_pagina.css">
     <link rel="stylesheet" type="text/css" href="../../Estilos/estilo_formularios.css">
     <link rel="stylesheet" type="text/css" href="../../Estilos/estilo_tablas.css">
@@ -12,21 +12,13 @@
   <body>
     <iframe src="../../Plantillas/header_comun/header_comun.html"></iframe>
     <center>
-        <p id="titulo_pagina">Buscar cliente</p>
+        <p id="titulo_pagina">Buscar carro</p>
     </center>
     <center>
       <table>
           <tr>
-              <td>
-                <label>Nombre</label>
-                <input type="text" pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" name="c_nom" id="c_nom">
-              </td>
-              <td>
-                <button onclick="buscar()">Buscar</button>
-              </td>
-          </tr>
-          <tr>
-              <td colspan=2>...o puede <a href="../../Vista/vista.html">ver todos los clientes</a></td>
+              <td><label>Placa</label><input type="text" pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" name="c_nom" id="c_nom"></td>
+              <td><button onclick="buscar()">Buscar</button></td>
           </tr>
       </table>
     <table id="tabla"></table>
@@ -35,7 +27,7 @@
     <script>
         function buscar(){
             var nombre = document.getElementById("c_nom").value;
-            cambiarInnerHTML("tabla", "buscar_cliente.php?c_nom="+nombre);
+            cambiarInnerHTML("tabla", "buscar_carro.php?c_placa="+nombre);
         }
     </script>
   </body>
