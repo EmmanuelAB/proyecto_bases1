@@ -97,6 +97,20 @@ BEGIN
 END;
 $BODY$
   LANGUAGE plpgsql VOLATILE;
+  
+--                                                     CREACIÓN DEL TRIGGER
+create or replace function rev_cantidad_precio() returns trigger as $$
+	begin 
+		if new.cantidad < 0 or new.precio < 0 then
+			raise exception 'Error: Cantidad o precio negativo(s)';
+		end if;
+		return new;
+	end;
+$$ language plpgsql;
+
+CREATE TRIGGER revisar_cantidad AFTER INSERT OR UPDATE on aplicapara
+	for each row execute procedure rev_cantidad_precio();
+
 
 --                                                     INSERCION DE DATOS DE EJEMPLO
  INSERT INTO tipocarro (marca, modelo, año) VALUES 

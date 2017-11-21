@@ -7,7 +7,7 @@
                     "        e.total, e.cedula, concat(c.nombre,' ',c.apellido1,' ',c.apellido2)".
                     " from entradaexp e join cliente c on e.cedula=c.cedula".
                     " where e.cedula=$cedula and e.codigoproducto is NULL;"); //Solo trabajos
-    $campos = array("Fecha","TipoEntrada","Cantidad","Total","CedulaCliente","Cliente","Pieza",
+    $campos = array("Fecha","Descripción","Cantidad","Total","CedulaCliente","Cliente","Pieza",
                     "Carro","PrecioUnitario");
     echo "<tr id='fila_titulo'>";
     foreach($campos as $campo){
