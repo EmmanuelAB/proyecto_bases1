@@ -23,16 +23,16 @@ CREATE TABLE producto (
 );
 
 CREATE TABLE aplicapara (
-    idtipocarro int NOT NULL,
-    codigoproducto int NOT NULL,
+    idtipocarro int,
+    codigoproducto int,
     precio int,
     cantidad int,
 
     CONSTRAINT idaplicapara PRIMARY KEY (idtipocarro, codigoproducto),
     CONSTRAINT aplicapara_idtipocarro_fkey FOREIGN KEY (idtipocarro) REFERENCES tipocarro(idtipocarro) 
-    	ON DELETE SET NULL ON UPDATE CASCADE,
+    	ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT aplicapara_codigoproducto_fkey FOREIGN KEY (codigoproducto) REFERENCES producto(codigo)
-    	ON DELETE SET NULL ON UPDATE CASCADE
+    	ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE carro (

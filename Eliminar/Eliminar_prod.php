@@ -4,6 +4,7 @@
     ini_set('display_errors', 1);
 
     $codigo = $_GET["c_prod"];
+    //$idcarro = $_GET["c_idtipo"];
 
     //Se importa el archivo php con los credenciales de la base
     require("../Base/CredencialesProyecto.php");
@@ -13,7 +14,7 @@
     $connection = pg_connect($string_connection) or die("No se pudo conectar".pg_last_error());
 
     //Consulta a ejecutar sobre la base
-    $query = "Delete From producto p WHERE p.codigo = $codigo";
+    $query = "DELETE FROM producto p WHERE p.codigo = $codigo";
 
     $resultado = pg_query($connection,$query);
 
