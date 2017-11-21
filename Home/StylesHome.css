@@ -39,7 +39,7 @@ header nav > ul > li > a{
     text-align: center;
     text-decoration: none;
     display: block;
-    padding: 10px 15px;
+    padding: 10px 20px;
     position: relative;
 }
 
@@ -52,7 +52,7 @@ header nav > ul > li > ul > li > a{
     text-align: center;
     text-decoration: none;
     display: block;
-    padding: 10px 15px;
+    padding: 10px 20px;
     position: relative;
 }
 
@@ -75,7 +75,7 @@ header nav > ul > li{
 /*Animacion de corrimiento*/
 header nav ul ul{
     transform: translateX(80%);
-    transition: all .5s;
+    transition: all .4s;
     opacity: 0;
 }
 
@@ -89,18 +89,18 @@ header nav > ul > li:hover > ul{
 /*Cambiar algunas propiedades para que parezcan botones*/
 header nav > ul > li > a:hover{
     border-radius: 15px;
-    background-color: #ec2a30;
+    background-color: black;
 }
 
 header nav > ul > li > ul a:hover{
     color: white;
-    background-color: #ec2a30;
+    background-color: black;
 }
 
 .wrapper2{
-    width: 95%;
+    width: 100%;
     max-width: 1000px;
-    margin: auto;
+    margin-left: 115px;
     overflow: hidden;
 }
 
