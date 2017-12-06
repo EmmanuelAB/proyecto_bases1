@@ -13,6 +13,8 @@
 
         $nombre = $_GET["p_nom"];
         $tipo = $_GET["p_tipo"];
+        $cantidad = $_GET["p_cantidad"];
+        $precio = $_GET["p_precio"];
 
         //Se importa el archivo php con los credenciales de la base
         require("../Base/CredencialesProyecto.php");
@@ -22,7 +24,8 @@
         $connection = pg_connect($string_connection) or die("No se pudo conectar".pg_last_error());;
 
         //Consulta a ejecutar sobre la base
-        $query = "Insert into producto (nombre,tipo) Values ('$nombre','$tipo')";
+        $query = "Insert into producto (nombre,tipo,cantidad,precio) Values 
+                                       ('$nombre','$tipo',$cantidad,$precio)";
 
         $resultado = pg_query($connection,$query);
 

@@ -13,13 +13,19 @@
                      t.modelo='$modelo'
                      and
                      t.año = $ano;");
-            while($registro = pg_fetch_array($res, null, PGSQL_ASSOC)){
-                foreach($registro as $campo){
-                    echo "<option value='$campo'>";
-                    echo  $campo;
-                    echo "</option>";
-                }
-            }
+	while($registro = pg_fetch_array($res, null, PGSQL_ASSOC)){
+		//~ foreach($registro as $campo){
+			//~ echo "<option>asd</option>";
+			//~ echo "<option>hui</option>";
+			echo "<option value='-'>".$registro["nombre"]."</option>";
+			//~ echo ">>".$registro["nombre"];
+			//~ echo "<option value='".$registro["nombre"]."'>as</option>";
+				echo "<option value='valor valor'>content content</option>";
+			//~ echo "<option value='$campo'>";
+			//~ echo  $campo;
+			//~ echo "</option>";
+		//~ }
+	}
             //echo "</select>";
     pg_close($connection);
 ?>

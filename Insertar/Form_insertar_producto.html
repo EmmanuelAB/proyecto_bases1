@@ -11,19 +11,28 @@
 <body>
     <iframe src="../Plantillas/header_comun/header_comun.html"></iframe>
     <center><p id="titulo_pagina">Registro Productos</p></center>
+    <datalist id="nombres"></datalist>
     <form name="formInsPr" action="Insertar_producto.php" method="get">
         <table align="center">
             <tr>
                 <td>Nombre</td>
-                <td><input type="text" pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" name="p_nom"></td>
+                <td><input list="nombres" type="text" pattern="[A-Za-z0-9_ ./-]{1,60}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" name="p_nom" autofocus></td>
             </tr>
             <tr>
                 <td>Tipo</td>
-                <td><input type="text" pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" list="tipos" name="p_tipo"></td>
+                <td><input type="text" pattern="[A-Za-z0-9_./-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" autocomplete="off" list="tipos" name="p_tipo" value="repuesto"></td>
                 <datalist id="tipos">
                     <option value="repuesto"></option>
                     <option value="quimico"></option>                    
                 </datalist>
+            </tr>
+            <tr>
+				<td>Precio</td>
+				<td><input name="p_precio" type="number"value="0"></td>
+            </tr>
+            <tr>
+				<td>Cantidad</td>
+				<td><input name="p_cantidad" type="number" value="1"></td>
             </tr>
             <tr>
                 <td><br></td>
@@ -34,5 +43,9 @@
             </tr>
         </table>
     </form>
+    <script src="../JS/html_changer.js"></script>
+    <script>
+		cambiarInnerHTML("nombres", "nombres_productos.php");
+    </script>
 </body>
 </html>

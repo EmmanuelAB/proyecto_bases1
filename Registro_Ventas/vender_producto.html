@@ -18,7 +18,7 @@
             <table>
 
                 <tr>
-                    <td><label>Cliente</label></td>
+                    <td><label>Cedula Cliente</label></td>
                     <td><input pattern="[A-Za-z0-9_-]{1,20}" title="Letras a-z, digitos 0-9,'-' y '_'" name="cedula" autocomplete="off" list="clientes" type="text"></td>
                 </tr>
 
@@ -64,17 +64,22 @@
         function llenar_codigos_producto() {
             var idcarro = document.getElementById("tipocarro").value;
             cambiarInnerHTML("codigos", "pedir_codigos_producto.php?c_tipocarro="+idcarro);
+            document.getElementById("codigo").value="";
             actualizar_precio();
         }
         function llenar_tiposcarro() {
             cambiarInnerHTML("tiposcarro", "pedir_tipos_carro.php");
         }
         function actualizar_precio(){
-            var idtipo = document.getElementById("tipocarro").value;
             var codigo = document.getElementById("codigo").value;
-            if(idtipo!="" && codigo!=""){
+            var idtipo = document.getElementById("tipocarro").value;
+            if(codigo!=""){
                 cambiarInnerHTML("precio","pedir_precio.php?c_tipocarro="+idtipo+"&c_codigo="+codigo);
             }
+            else{
+				document.getElementById("precio").innerHTML="";
+			}
+            
         }
         window.onload = llenar_clientes;
         llenar_tiposcarro();

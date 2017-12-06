@@ -6,20 +6,20 @@ CREATE TABLE cliente (
     apellido2 varchar(20),
     telefono1 int NOT NULL,
     telefono2 int,
-    direccion varchar(200)
+    direccion varchar(300)
 );
 
 CREATE TABLE tipocarro (
     idtipocarro serial PRIMARY KEY,
     marca varchar(10) NOT NULL,
-    modelo varchar(10),
+    modelo varchar(30),
     año int
 );
 
 CREATE TABLE producto (
     codigo serial PRIMARY KEY,
     nombre varchar(60) NOT NULL,
-    tipo varchar(10)  --dice si es quimico o repuesto
+    tipo varchar(15)  --dice si es quimico o repuesto
 );
 
 CREATE TABLE aplicapara (
@@ -120,19 +120,19 @@ CREATE TRIGGER revisar_cantidad AFTER INSERT OR UPDATE on aplicapara
 
 
 --                                                     INSERCION DE DATOS DE EJEMPLO
- INSERT INTO tipocarro (marca, modelo, año) VALUES 
-	 ('Toyota',	'Corolla',		1989),
-	 ('Nissan',	'Sentra',		1995),
-	 ('Honda',	'Accord',		1998)
- ;
+--INSERT INTO tipocarro (marca, modelo, año) VALUES 
+--	 ('Toyota',	'Corolla',		1989),
+--	 ('Nissan',	'Sentra',		1995),
+--	 ('Honda',	'Accord',		1998)
+-- ;
  
-  INSERT INTO cliente (cedula, nombre, apellido1, apellido2, telefono1, telefono2, direccion) VALUES
-	 (1234561,	'Gerardo', 'Soto',      'Cruz',      63312287,	0	,'El llano, Alajuela'),
-	 (1234562,	'Estefany','Molina',    'Espinoza',  61345987,	0	,'Tacares, Alajuela'),
-	 (1234563,	'Pepe',    'Ramirez',   'Arroyo',    89321745,	0	,'La Uruca, San José')
- ;
+--  INSERT INTO cliente (cedula, nombre, apellido1, apellido2, telefono1, telefono2, direccion) VALUES
+--	 (1234561,	'Gerardo', 'Soto',      'Cruz',      63312287,	0	,'El llano, Alajuela'),
+--	 (1234562,	'Estefany','Molina',    'Espinoza',  61345987,	0	,'Tacares, Alajuela'),
+--	 (1234563,	'Pepe',    'Ramirez',   'Arroyo',    89321745,	0	,'La Uruca, San José')
+--;
  
- INSERT INTO producto (nombre, tipo) VALUES
+/* INSERT INTO producto (nombre, tipo) VALUES
 	 ('dash',		    		'repuesto'),
 	 ('guantera',				'repuesto'),
 	 ('bumber',					'repuesto'),
@@ -179,3 +179,4 @@ CREATE TRIGGER revisar_cantidad AFTER INSERT OR UPDATE on aplicapara
 	 ('2017-07-08'	,'venta',	           2,total(2,7,3),	1234561,	3,7),
 	 ('2017-07-08'	,'venta',	           1,total(1,1,3),	1234562,	3,1)
  ;
+*/
