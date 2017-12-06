@@ -16,7 +16,7 @@
                      and
                      t.año = $ano
                      and
-                     p.nombre like '%$repuesto%'
+                     p.nombre ilike '%$repuesto%'
                      ");
     $campos = array("Repuesto","Precio","Cantidad");
     echo "<tr id='fila_titulo'>";

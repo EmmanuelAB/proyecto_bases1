@@ -17,10 +17,10 @@
 		//~ foreach($registro as $campo){
 			//~ echo "<option>asd</option>";
 			//~ echo "<option>hui</option>";
-			echo "<option value='-'>".$registro["nombre"]."</option>";
+			echo "<option value='".$registro["nombre"]."'>-</option>";
 			//~ echo ">>".$registro["nombre"];
 			//~ echo "<option value='".$registro["nombre"]."'>as</option>";
-				echo "<option value='valor valor'>content content</option>";
+				//~ echo "<option value='valor valor'>content content</option>";
 			//~ echo "<option value='$campo'>";
 			//~ echo  $campo;
 			//~ echo "</option>";
